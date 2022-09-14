@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Factory
   m_EditorClassIdentifier: 
   cost: 20
-  costPerTurn: 50
+  costPerTurn: 5
   prefab: {fileID: 749698683246074614, guid: 95f8cc0b7c32a114cafcd97d3b97dccd, type: 3}
   population: 0
   jobs: 10

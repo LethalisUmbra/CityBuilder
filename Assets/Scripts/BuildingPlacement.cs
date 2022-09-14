@@ -66,12 +66,17 @@ public class BuildingPlacement : MonoBehaviour
     void PlaceBuilding()
     {
         GameObject buildingObj = Instantiate(curBuildingPreset.prefab, curIndicatorPos, Quaternion.identity);
-        // Tell city script
+
+        City.instance.OnPlaceBuilding(buildingObj.GetComponent<Building>());
+
         CancelBuildingPlacement();
     }
 
     void Bulldoze()
     {
+        Building buildingToDestroy = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos);
 
+        if (buildingToDestroy != null)
+            City.instance.OnRemoveBuilding(buildingToDestroy);
     }
 }
